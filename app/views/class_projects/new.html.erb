@@ -1,0 +1,20 @@
+<h1>New Class Project</h1>
+
+<%= form_for @class_project do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+	
+	<%= f.label :summary %>
+	<%= f.text_field :summary %>
+	
+	<%= f.label :github %>
+	<%= f.text_field :github %>
+	
+	<%= f.label :other_url %>
+	<%=f.text_field :other_url %>
+	
+<% end %>
