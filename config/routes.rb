@@ -2,6 +2,8 @@ RailsPortfolioApp::Application.routes.draw do
   get 'home' => 'pages#home', :as => 'home'
   get 'about' => 'pages#about', :as => 'about'
   
+  get 'class_projects' => 'class_projects#index', :as => 'index'
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
