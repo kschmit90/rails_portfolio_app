@@ -1,0 +1,29 @@
+<h1>Edit Contact</h1>
+
+<% @contact.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form_for(@contact, :url => update_contact_path) do |f| %>
+
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+	
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+	
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	
+	<%= f.label :message %>
+	<%= f.text_field :message %>
+	
+	<%= f.label :phone %>
+	<%= f.text_field :phone %>
+	
+	<%= f.label :website %>
+	<%= f.text_field :website %>
+	
+	<%= f.submit %>
+	
+<% end %>

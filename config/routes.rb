@@ -2,8 +2,24 @@ RailsPortfolioApp::Application.routes.draw do
   get 'home' => 'pages#home', :as => 'home'
   get 'about' => 'pages#about', :as => 'about'
   
-  get 'class_projects' => 'class_projects#index', :as => 'index'
-  get 'new_project' => 'class_projects#new', :as => 'new'
+  get 'class_projects' => 'class_projects#index', :as => 'projects_index'
+  get 'class_project/:id' => 'class_projects#show', :as => 'project_show'
+  
+  get 'new_project' => 'class_projects#new', :as => 'new_project'
+  post 'class_projects' => 'class_projects#create', :as => 'create_project'
+  
+  get 'class_project/:id/edit' => 'class_projects#edit', :as => 'edit_project'
+  put 'class_project/:id' => 'class_projects#update', :as => 'update_project'
+  
+  get 'contacts' => 'contacts#index', :as => 'contacts_index'
+  get 'contact/:id' => 'contacts#show', :as => 'contacts_show'
+  
+  get 'new_contact' => 'contacts#new', :as => 'new_contact'
+  post 'contacts' => 'contacts#create', :as => 'create_contact'
+  
+  get 'contact/:id/edit' => 'contacts#edit', :as => 'edit_contact'
+  put 'contact/:id' => 'contacts#update', :as => 'update_contact'
+  
   
   
   # The priority is based upon order of creation:
