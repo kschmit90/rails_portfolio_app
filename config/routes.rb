@@ -20,6 +20,15 @@ RailsPortfolioApp::Application.routes.draw do
   get 'contact/:id/edit' => 'contacts#edit', :as => 'edit_contact'
   put 'contact/:id' => 'contacts#update', :as => 'update_contact'
   
+  get 'links' => 'links#index', :as => 'links_index'
+  get 'links/:id' => 'links#show', :as => 'links_show'
+  
+  get 'new_link' => 'links#new', :as => 'new_link'
+  post 'links' => 'links#create', :as => 'create_link'
+  
+  get 'link/:id/edit' => 'links#edit', :as => 'edit_link'
+  put 'link/:id' => 'links#update', :as => 'update_link'
+  
   
   
   # The priority is based upon order of creation:
