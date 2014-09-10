@@ -1,7 +1,13 @@
 RailsPortfolioApp::Application.routes.draw do
+  
+  # Pages Routes
+  #
   get 'home' => 'pages#home', :as => 'home'
   get 'about' => 'pages#about', :as => 'about'
   
+  #
+  # Projects Routes
+  #
   get 'class_projects' => 'class_projects#index', :as => 'projects_index'
   get 'class_project/:id' => 'class_projects#show', :as => 'project_show'
   
@@ -11,6 +17,9 @@ RailsPortfolioApp::Application.routes.draw do
   get 'class_project/:id/edit' => 'class_projects#edit', :as => 'edit_project'
   put 'class_project/:id' => 'class_projects#update', :as => 'update_project'
   
+  #
+  # Contacts Routes
+  #
   get 'contacts' => 'contacts#index', :as => 'contacts_index'
   get 'contact/:id' => 'contacts#show', :as => 'contacts_show'
   
@@ -20,6 +29,9 @@ RailsPortfolioApp::Application.routes.draw do
   get 'contact/:id/edit' => 'contacts#edit', :as => 'edit_contact'
   put 'contact/:id' => 'contacts#update', :as => 'update_contact'
   
+  #
+  # Links Routes
+  #
   get 'links' => 'links#index', :as => 'links_index'
   get 'links/:id' => 'links#show', :as => 'links_show'
   
