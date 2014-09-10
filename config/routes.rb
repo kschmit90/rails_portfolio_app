@@ -1,8 +1,8 @@
 RailsPortfolioApp::Application.routes.draw do
-  
+  #
   # Pages Routes
   #
-  get 'home' => 'pages#home', :as => 'home'
+  root :to => 'pages#home'
   get 'about' => 'pages#about', :as => 'about'
   
   #
