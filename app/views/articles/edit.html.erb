@@ -1,0 +1,20 @@
+<h1>Edit Article</h1>
+
+<% @article.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form_for(@article, :url => update_article_path) do |f| %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+	
+	<%= f.label :draft %>
+	<%= f.checkbox :draft %>
+	
+	<%= f.submit %>
+	
+<% end %>

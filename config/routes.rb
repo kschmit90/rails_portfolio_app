@@ -33,7 +33,7 @@ RailsPortfolioApp::Application.routes.draw do
   # Links Routes
   #
   get 'links' => 'links#index', :as => 'links_index'
-  get 'links/:id' => 'links#show', :as => 'links_show'
+  get 'link/:id' => 'links#show', :as => 'link_show'
   
   get 'new_link' => 'links#new', :as => 'new_link'
   post 'links' => 'links#create', :as => 'create_link'
@@ -41,8 +41,18 @@ RailsPortfolioApp::Application.routes.draw do
   get 'link/:id/edit' => 'links#edit', :as => 'edit_link'
   put 'link/:id' => 'links#update', :as => 'update_link'
   
+  #
+  # Articles Routes
+  #
+  get 'articles' => 'articles#index', :as => 'articles_index'
+  get 'article/:id' => 'articles#show', :as => 'article_show'
   
+  get 'new_article' => 'articles#new', :as => 'new_article'
+  post 'articles' => 'articles#create', :as => 'create_article'
   
+  get 'article/:id/edit' => 'articles#edit', :as => 'edit_article'
+  put 'article/:id' => 'articles#update', :as => 'update_article'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

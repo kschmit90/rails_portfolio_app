@@ -1,7 +1,7 @@
 <h1>Links Index</h1>
 
 <% @links.each do |link| %>
-  <p><%= link_to(link.name, links_show_path(link.id)) %></p>
+  <p><%= link_to(link.name, link_show_path(link.id)) %></p>
 <% end %>
 
 <%= link_to("New Link", new_link_path) %>
