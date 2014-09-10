@@ -4,7 +4,7 @@
   <p><%= msg %></p>
 <% end %>
 
-<%= form_for(@article, :url => update_article_path) do |f| %>
+<%= form_for(@article, :url => create_article_path) do |f| %>
 
 	<%= f.label :title %>
 	<%= f.text_field :title %>
@@ -13,7 +13,7 @@
 	<%= f.text_field :body %>
 	
 	<%= f.label :draft %>
-	<%= f.checkbox :draft %>
+	<%= f.check_box :draft %>
 	
 	<%= f.submit %>
 	

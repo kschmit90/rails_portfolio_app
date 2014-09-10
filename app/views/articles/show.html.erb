@@ -1,2 +1,8 @@
-<p><%= @article.title %></p>
-<p><%= @article.body %></p>
+<% if @article.draft == true %>
+	<p>This article is a draft.</p>
+	<p><%= @article.title %></p>
+	<p><%= @article.body %></p>
+<% else %>
+	<p><%= @article.title %></p>
+	<p><%= @article.body %></p>
+<% end %>
