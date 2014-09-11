@@ -52,6 +52,8 @@ RailsPortfolioApp::Application.routes.draw do
   
   get 'article/:id/edit' => 'articles#edit', :as => 'edit_article'
   put 'article/:id' => 'articles#update', :as => 'update_article'
+  
+  get 'liked/:id' => 'articles#like', :as => 'like_article'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

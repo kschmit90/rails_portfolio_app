@@ -34,4 +34,11 @@ class ArticlesController < ApplicationController
       render 'edit'
     end
   end
+  
+  def like
+    @article = Article.find(params[:id])
+    @like = Like.create('liked' => true, 'ip_address' => request.remote_ip, 'article_id' => params[:id])
+    (session[:session_article_id_array] ||= []) << params[:id]
+    render 'show'
+  end
 end
