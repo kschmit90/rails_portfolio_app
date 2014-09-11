@@ -2,30 +2,16 @@
 	<p>This article is a draft.</p>
 	<p><%= @article.title %></p>
 	<p><%= @article.body %></p>
-	<p><%= session %></p>
-	<% if session[:session_article_id_array] %>
-	<% session[:session_article_id_array].each do |id|%>
-		<% if id == @article.id %>
-			<p>You Like This Article</p>
-		<%end%>
-	<% end %>
-	<% else %>
-		<%= link_to('Like this article', like_article_path)%>
-	<%end%>
-<% else %>
 	
+<% else %>
 	<p><%= @article.title %></p>
 	<p><%= @article.body %></p>
-	<p><%= session %></p>
-	<% if session[:session_article_id_array] %>
-	<% session[:session_article_id_array].each do |id|%>
-		<% if id == @article.id %>
-			<p>You Like This Article</p>
-		<% else %>
-			<p><%= link_to('Like this article', like_article_path)%></p>
-		<%end%>
-	<% end %>
-	<% else %>
-		<%= link_to('Like this article', like_article_path)%>
-	<%end%>
 <% end %>
+
+<% if session[:liked_article_ids] && session[:liked_article_ids].include?(@article.id) %>
+	<p>You like this article!</p>
+<% else %>
+	<%= link_to("Like this article", like_article_path(@article.id)) %>
+<% end %>
+
+<p><%= session %></p>

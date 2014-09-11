@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   attr_accessible :body, :draft, :title
   validates :body, :title, presence: true
+  has_many :likes
   
   def excerpt(body)
     excerptarray = body.split("")

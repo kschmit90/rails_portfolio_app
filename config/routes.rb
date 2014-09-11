@@ -53,7 +53,13 @@ RailsPortfolioApp::Application.routes.draw do
   get 'article/:id/edit' => 'articles#edit', :as => 'edit_article'
   put 'article/:id' => 'articles#update', :as => 'update_article'
   
-  get 'liked/:id' => 'articles#like', :as => 'like_article'
+  get 'liked/:id' => 'likes#new', :as => 'like_article'
+  
+  get "login" => 'logins#new', :as => "login"
+  post "login" => 'logins#create', :as => "create_login"
+  
+  post "create_user" => 'users#create', :as => "create_user"
+  get "signup" => 'users#new', :as => "signup"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
